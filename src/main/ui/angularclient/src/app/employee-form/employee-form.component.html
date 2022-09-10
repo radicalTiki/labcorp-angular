@@ -1,0 +1,27 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #EmployeeForm="ngForm">
+      <div class="form-group">
+        <label for="work">Name</label>
+        <input type="text" [(ngModel)]="Employee.workDays"
+               class="form-control"
+               id="work"
+               name="work"
+               placeholder="Enter work days"
+               required #work="ngModel">
+      </div>
+      <div [hidden]="!work.pristine" class="alert alert-danger">Work Days is required</div>
+      <div class="form-group">
+        <label for="vacation">Vacation</label>
+        <input type="text" [(ngModel)]="Employee.vacation"
+               id="vacation"
+               class="form-control"
+               placeholder="Enter vacation days"
+               required #vacation="ngModel">
+        <div [hidden]="!vacation.pristine" class="alert alert-danger">Vacation Days is required</div>
+      </div>
+      <button type="submit" [disabled]="!EmployeeForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

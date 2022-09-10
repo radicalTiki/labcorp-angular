@@ -1,0 +1,20 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Employee ID</th>
+        <th scope="col">Work Days</th>
+        <th scope="col">Vacation</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of Employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.workingDays }}</td>
+        <td>{{ employee.vacationDays }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
